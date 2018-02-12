@@ -1,0 +1,87 @@
+package com.denzcoskun.schoolassistant.weeklyschedule.adapters;
+
+import android.app.Activity;
+import android.content.Context;
+import android.graphics.Color;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.denzcoskun.schoolassistant.R;
+import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
+
+import java.util.List;
+import java.util.Random;
+
+/**
+ * Created by Denx on 12.02.2018.
+ */
+
+public class LessonAdapter extends BaseAdapter {
+    private Context context;
+    private LayoutInflater mInflater;
+    private List<LessonModel> lessons;
+
+    public LessonAdapter(Activity activity, List<LessonModel> lessons) {
+        this.context=activity;
+        mInflater = (LayoutInflater) activity.getSystemService(
+                Context.LAYOUT_INFLATER_SERVICE);
+        this.lessons = lessons;
+    }
+
+    @Override
+    public int getCount() {
+        return lessons.size();
+    }
+
+    @Override
+    public LessonModel getItem(int position) {
+        return lessons.get(position);
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(final int position, View convertView, ViewGroup parent) {
+        View view= convertView;
+        view = mInflater.inflate(R.layout.day_lesson_row, null);
+
+
+        LinearLayout linearLayout =
+                (LinearLayout) view.findViewById(R.id.random_lesson_color);
+
+        TextView lessonName =
+                (TextView) view.findViewById(R.id.lesson_name);
+        TextView lessonTime =
+                (TextView) view.findViewById(R.id.lesson_time);
+        TextView lessonClassroom =
+                (TextView) view.findViewById(R.id.lesson_classroom);
+
+        final ImageButton lessonDeleteButton= (ImageButton)view.findViewById(R.id.lesson_delete);
+
+        Random rnd = new Random();
+        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+
+        linearLayout.setBackgroundColor(color);
+
+        lessonDeleteButton.setOnClickListener(click-> {
+                lessons.remove(position);
+                this.notifyDataSetChanged();
+        });
+
+        final LessonModel lesson = lessons.get(position);
+
+        lessonName.setText(lesson.getName());
+        lessonTime.setText(lesson.getStartTime()+" - "+lesson.getFinishTime());
+        lessonClassroom.setText(lesson.getClassroom());
+
+        return view;
+    }
+}
