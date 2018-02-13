@@ -1,6 +1,7 @@
 package com.denzcoskun.schoolassistant.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -27,8 +28,11 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-
-        return new DayFragment();
+        DayFragment dayFragment = new DayFragment();
+        Bundle bundle = new Bundle();
+        bundle.putInt("position",position);
+        dayFragment.setArguments(bundle);
+        return dayFragment;
     }
 
     @Override

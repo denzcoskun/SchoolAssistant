@@ -1,6 +1,7 @@
 package com.denzcoskun.schoolassistant.weeklyschedule.models;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,6 +14,7 @@ public class DayModel implements Serializable {
 
     public DayModel(String name) {
         this.name = name;
+        lessons = new ArrayList<>();
     }
 
     public String getName() {

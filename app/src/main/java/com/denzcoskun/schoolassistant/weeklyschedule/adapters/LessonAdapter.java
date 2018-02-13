@@ -17,17 +17,34 @@ import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
 import java.util.List;
 import java.util.Random;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Denx on 12.02.2018.
  */
 
 public class LessonAdapter extends BaseAdapter {
-    private Context context;
+
+    @BindView(R.id.random_lesson_color)
+    LinearLayout randomLessonColor;
+
+    @BindView(R.id.lesson_name)
+    TextView lessonName;
+
+    @BindView(R.id.lesson_time)
+    TextView lessonTime;
+
+    @BindView(R.id.lesson_classroom)
+    TextView lessonClassroom;
+
+    @BindView(R.id.lesson_delete)
+    ImageButton lessonDeleteButton;
+
     private LayoutInflater mInflater;
     private List<LessonModel> lessons;
 
     public LessonAdapter(Activity activity, List<LessonModel> lessons) {
-        this.context=activity;
         mInflater = (LayoutInflater) activity.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
         this.lessons = lessons;
@@ -52,24 +69,14 @@ public class LessonAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         View view= convertView;
         view = mInflater.inflate(R.layout.day_lesson_row, null);
+        ButterKnife.bind(this,view);
 
 
-        LinearLayout linearLayout =
-                (LinearLayout) view.findViewById(R.id.random_lesson_color);
-
-        TextView lessonName =
-                (TextView) view.findViewById(R.id.lesson_name);
-        TextView lessonTime =
-                (TextView) view.findViewById(R.id.lesson_time);
-        TextView lessonClassroom =
-                (TextView) view.findViewById(R.id.lesson_classroom);
-
-        final ImageButton lessonDeleteButton= (ImageButton)view.findViewById(R.id.lesson_delete);
 
         Random rnd = new Random();
         int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
 
-        linearLayout.setBackgroundColor(color);
+        randomLessonColor.setBackgroundColor(color);
 
         lessonDeleteButton.setOnClickListener(click-> {
                 lessons.remove(position);

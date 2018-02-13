@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <android.support.design.widget.TabLayout
-            android:id="@+id/tabs"
+            android:id="@+id/tablayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawingCacheQuality="high"
@@ -32,7 +32,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true">
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fabChat"
+            android:id="@+id/lesson_add_button"
             android:src="@drawable/ic_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
     <ListView
         android:id="@+id/day_list"
-        android:paddingBottom="45dp"
+        android:paddingTop="45dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 </RelativeLayout>
