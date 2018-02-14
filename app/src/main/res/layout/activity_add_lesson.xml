@@ -29,7 +29,7 @@
                         android:src="@drawable/ic_pencil"
                         android:id="@+id/image_button_edit_lesson"
                         android:scaleType="fitXY"
-                        android:background="@color/colorPrimary"
+                        android:background="@drawable/button_background"
                         android:layout_height="50dp" />
                 </LinearLayout>
 
@@ -72,7 +72,7 @@
                     android:src="@drawable/ic_clock"
                     android:scaleType="fitXY"
                     android:id="@+id/image_button_edit_start_time"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/button_background"
                     android:layout_height="50dp" />
             </LinearLayout>
         </RelativeLayout>
@@ -108,7 +108,7 @@
                     android:src="@drawable/ic_clock"
                     android:scaleType="fitXY"
                     android:id="@+id/image_button_edit_finish_time"
-                    android:background="@color/colorPrimary"
+                    android:background="@drawable/button_background"
                     android:layout_height="50dp" />
             </LinearLayout>
         </RelativeLayout>
@@ -121,7 +121,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/button_add_lesson"
-                android:background="@color/colorPrimary"
+                android:background="@drawable/button_background"
                 android:textColor="@android:color/white"/>
         </LinearLayout>
 

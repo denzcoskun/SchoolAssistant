@@ -92,6 +92,7 @@ public class AddLessonActivity extends AppCompatActivity {
         buttonAddLesson.setOnClickListener(v -> {
             MainActivity.dayModels.get(position).getLessons()
                 .add(new LessonModel(spinnerLessons.getSelectedItem().toString(),
+                        spinnerLessons.getSelectedItemPosition(),
                         edittextClassroom.getText().toString(),
                         startHour+":"+startMinute,
                         finishHour+":"+finishMinute));
