@@ -34,7 +34,7 @@ public class DayFragment extends Fragment {
         position = bundle.getInt("position");
 
         listView = (ListView) getView().findViewById(R.id.day_list);
-        MainActivity.lessonAdapters[position] = new LessonAdapter(getActivity(), MainActivity.dayModels.get(position).getLessons());
+        MainActivity.lessonAdapters[position] = new LessonAdapter(getActivity(), MainActivity.mainModel.dayModels.get(position).getLessons());
         listView.setAdapter(MainActivity.lessonAdapters[position]);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {

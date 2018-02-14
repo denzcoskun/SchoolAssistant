@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
+import com.denzcoskun.schoolassistant.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
 
 import java.util.ArrayList;
@@ -58,11 +59,7 @@ public class EditLessonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_lesson);
         ButterKnife.bind(this);
 
-        List<String> namesOfLessons = new ArrayList<>();
-        namesOfLessons.add(getString(R.string.science));
-        namesOfLessons.add(getString(R.string.mathematics));
-        namesOfLessons.add(getString(R.string.history));
-
+        DataHelper dataHelper = new DataHelper(EditLessonActivity.this);
         int position = getIntent().getIntExtra("position", 0);
         int listItemPosition = getIntent().getIntExtra("listItemPosition", 0);
 
@@ -91,24 +88,25 @@ public class EditLessonActivity extends AppCompatActivity {
         });
 
         buttonAddLesson.setOnClickListener(v -> {
-            MainActivity.dayModels.get(position).getLessons()
+            MainActivity.mainModel.dayModels.get(position).getLessons()
                     .set(listItemPosition, new LessonModel(spinnerLessons.getSelectedItem().toString(),
                             spinnerLessons.getSelectedItemPosition(),
                             edittextClassroom.getText().toString(),
                             startHour + ":" + startMinute,
                             finishHour + ":" + finishMinute));
             MainActivity.lessonAdapters[position].notifyDataSetChanged();
+            dataHelper.setModel(MainActivity.mainModel);
             finish();
         });
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, namesOfLessons);
+                android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLessons.setAdapter(dataAdapter);
     }
 
     public void initViews(int position, int listItemPosition) {
-        LessonModel lessonModel = MainActivity.dayModels.get(position).getLessons().get(listItemPosition);
+        LessonModel lessonModel = MainActivity.mainModel.dayModels.get(position).getLessons().get(listItemPosition);
 
         startHour = lessonModel.getStartTime().split(":")[0];
         startMinute = lessonModel.getStartTime().split(":")[1];
@@ -120,6 +118,6 @@ public class EditLessonActivity extends AppCompatActivity {
         textViewFinishTime.setText((lessonModel.getFinishTime().split(":")[0] + ":"
                 + lessonModel.getFinishTime().split(":")[1]));
         edittextClassroom.setText(lessonModel.getClassroom());
-        spinnerLessons.setSelection(lessonModel.getPosition());
+        spinnerLessons.setSelection(lessonModel.getPosition(),true);
     }
 }

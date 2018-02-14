@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
+import com.denzcoskun.schoolassistant.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
 
 import java.util.ArrayList;
@@ -59,12 +60,7 @@ public class AddLessonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lesson);
         ButterKnife.bind(this);
-
-        List<String> namesOfLessons = new ArrayList<>();
-        namesOfLessons.add(getString(R.string.science));
-        namesOfLessons.add(getString(R.string.mathematics));
-        namesOfLessons.add(getString(R.string.history));
-
+        DataHelper dataHelper = new DataHelper(AddLessonActivity.this);
         int position = getIntent().getIntExtra("position",0);
 
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, (view, hourOfDay, minute) -> {
@@ -90,18 +86,19 @@ public class AddLessonActivity extends AppCompatActivity {
         });
 
         buttonAddLesson.setOnClickListener(v -> {
-            MainActivity.dayModels.get(position).getLessons()
+            MainActivity.mainModel.dayModels.get(position).getLessons()
                 .add(new LessonModel(spinnerLessons.getSelectedItem().toString(),
                         spinnerLessons.getSelectedItemPosition(),
                         edittextClassroom.getText().toString(),
                         startHour+":"+startMinute,
                         finishHour+":"+finishMinute));
             MainActivity.lessonAdapters[position].notifyDataSetChanged();
+            dataHelper.setModel(MainActivity.mainModel);
             finish();
         });
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, namesOfLessons);
+                android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLessons.setAdapter(dataAdapter);
     }
