@@ -1,5 +1,6 @@
 package com.denzcoskun.schoolassistant.weeklyschedule.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -9,6 +10,7 @@ import android.widget.ListView;
 
 import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
+import com.denzcoskun.schoolassistant.weeklyschedule.activities.EditLessonActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.adapters.LessonAdapter;
 
 import butterknife.BindView;
@@ -36,11 +38,11 @@ public class DayFragment extends Fragment {
         listView.setAdapter(MainActivity.lessonAdapters[position]);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
-          /*  Intent intent = new Intent(getActivity(), sonDersDuzenle.class);
-            CourseCalendar.poso = CourseCalendar.tabs.getSelectedTabPosition();
-            int pos = position;
-            intent.putExtra("pos", Integer.toString(pos));
-            startActivity(intent);*/
+            Intent intent = new Intent(getActivity(), EditLessonActivity.class);
+            int listItemPosition = position;
+            intent.putExtra("listItemPosition", listItemPosition);
+            intent.putExtra("position", this.position);
+            startActivity(intent);
         });
     }
 

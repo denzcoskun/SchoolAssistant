@@ -8,12 +8,14 @@ import java.io.Serializable;
 
 public class LessonModel implements Serializable {
     private String name;
+    private int position;
     private String classroom;
     private String startTime;
     private String finishTime;
 
-    public LessonModel(String name, String classroom, String startTime, String finishTime) {
+    public LessonModel(String name, int position, String classroom, String startTime, String finishTime) {
         this.name = name;
+        this.position = position;
         this.classroom = classroom;
         this.startTime = startTime;
         this.finishTime = finishTime;
@@ -49,5 +51,13 @@ public class LessonModel implements Serializable {
 
     public void setFinishTime(String finishTime) {
         this.finishTime = finishTime;
+    }
+
+    public int getPosition() {
+        return position;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
     }
 }
