@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="10dp"
+    android:descendantFocusability="blocksDescendants"
+    android:focusable="false"
+    android:focusableInTouchMode="false"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:paddingTop="5dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Deneme"
+                android:id="@+id/text_view_my_lessons_name"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+        <ImageButton
+            android:layout_width="35dp"
+            android:layout_alignParentRight="true"
+            android:id="@+id/image_button_my_lessons_delete"
+            android:layout_height="35dp"
+            android:src="@drawable/ic_delete"
+            android:background="@drawable/button_background"/>
+    </RelativeLayout>
+</LinearLayout>

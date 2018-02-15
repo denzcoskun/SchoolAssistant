@@ -4,6 +4,7 @@ import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -60,6 +61,8 @@ public class AddLessonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_lesson);
         ButterKnife.bind(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         DataHelper dataHelper = new DataHelper(AddLessonActivity.this);
         int position = getIntent().getIntExtra("position",0);
 
@@ -97,9 +100,21 @@ public class AddLessonActivity extends AppCompatActivity {
             finish();
         });
 
+        imageButtonEditLesson.setOnClickListener(v ->startActivity(new Intent( AddLessonActivity.this,MyLessonsActivity.class)));
+
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLessons.setAdapter(dataAdapter);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

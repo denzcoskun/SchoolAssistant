@@ -1,8 +1,10 @@
 package com.denzcoskun.schoolassistant.weeklyschedule.activities;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,9 +16,6 @@ import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,10 +57,16 @@ public class EditLessonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_lesson);
         ButterKnife.bind(this);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DataHelper dataHelper = new DataHelper(EditLessonActivity.this);
         int position = getIntent().getIntExtra("position", 0);
         int listItemPosition = getIntent().getIntExtra("listItemPosition", 0);
+
+        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);
+        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerLessons.setAdapter(dataAdapter);
 
         initViews(position, listItemPosition);
 
@@ -99,10 +104,7 @@ public class EditLessonActivity extends AppCompatActivity {
             finish();
         });
 
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerLessons.setAdapter(dataAdapter);
+        imageButtonEditLesson.setOnClickListener(v ->startActivity(new Intent(EditLessonActivity.this,MyLessonsActivity.class)));
     }
 
     public void initViews(int position, int listItemPosition) {
@@ -118,6 +120,16 @@ public class EditLessonActivity extends AppCompatActivity {
         textViewFinishTime.setText((lessonModel.getFinishTime().split(":")[0] + ":"
                 + lessonModel.getFinishTime().split(":")[1]));
         edittextClassroom.setText(lessonModel.getClassroom());
-        spinnerLessons.setSelection(lessonModel.getPosition(),true);
+        spinnerLessons.setSelection(lessonModel.getPosition());
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
