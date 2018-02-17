@@ -16,3 +16,4 @@ They will be added soon:
 
 ## Weekly Schedule
 
+![weekly](https://user-images.githubusercontent.com/15522554/36345910-2473be66-1445-11e8-9959-a53191a68245.jpg)
