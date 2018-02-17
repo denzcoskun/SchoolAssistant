@@ -5,4 +5,6 @@ package com.denzcoskun.schoolassistant.weeklyschedule.constants;
  */
 
 public class LessonConstants {
+    public static String POSITION = "position";
+    public static String LISTITEMPOSITION = "listItemPosition";
 }

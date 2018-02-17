@@ -15,10 +15,8 @@ import android.widget.TextView;
 import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
+import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -62,19 +60,36 @@ public class AddLessonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_lesson);
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.add_course);
 
         DataHelper dataHelper = new DataHelper(AddLessonActivity.this);
-        int position = getIntent().getIntExtra("position",0);
+        int position = getIntent().getIntExtra(LessonConstants.POSITION, 0);
 
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, (view, hourOfDay, minute) -> {
             if (isStart) {
-                startHour = Integer.toString(hourOfDay);
-                startMinute = Integer.toString(minute);
-                textViewStartTime.setText((startHour+":"+startMinute));
+                if (hourOfDay < 10) {
+                    startHour = "0" + Integer.toString(hourOfDay);
+                } else {
+                    startHour = Integer.toString(hourOfDay);
+                }
+                if (minute < 10) {
+                    startMinute = "0" + Integer.toString(minute);
+                } else {
+                    startMinute = Integer.toString(minute);
+                }
+                textViewStartTime.setText((startHour + ":" + startMinute));
             } else {
-                finishHour = Integer.toString(hourOfDay);
-                finishMinute = Integer.toString(minute);
-                textViewFinishTime.setText((finishHour+":"+finishMinute));
+                if (hourOfDay < 10) {
+                    finishHour = "0" + Integer.toString(hourOfDay);
+                } else {
+                    finishHour = Integer.toString(hourOfDay);
+                }
+                if (minute < 10) {
+                    finishMinute = "0" + Integer.toString(minute);
+                } else {
+                    finishMinute = Integer.toString(minute);
+                }
+                textViewFinishTime.setText((finishHour + ":" + finishMinute));
             }
         }, 0, 0, false);
 
@@ -90,17 +105,17 @@ public class AddLessonActivity extends AppCompatActivity {
 
         buttonAddLesson.setOnClickListener(v -> {
             MainActivity.mainModel.dayModels.get(position).getLessons()
-                .add(new LessonModel(spinnerLessons.getSelectedItem().toString(),
-                        spinnerLessons.getSelectedItemPosition(),
-                        edittextClassroom.getText().toString(),
-                        startHour+":"+startMinute,
-                        finishHour+":"+finishMinute));
+                    .add(new LessonModel(spinnerLessons.getSelectedItem().toString(),
+                            spinnerLessons.getSelectedItemPosition(),
+                            edittextClassroom.getText().toString(),
+                            startHour + ":" + startMinute,
+                            finishHour + ":" + finishMinute));
             MainActivity.lessonAdapters[position].notifyDataSetChanged();
             dataHelper.setModel(MainActivity.mainModel);
             finish();
         });
 
-        imageButtonEditLesson.setOnClickListener(v ->startActivity(new Intent( AddLessonActivity.this,MyLessonsActivity.class)));
+        imageButtonEditLesson.setOnClickListener(v -> startActivity(new Intent(AddLessonActivity.this, MyLessonsActivity.class)));
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);

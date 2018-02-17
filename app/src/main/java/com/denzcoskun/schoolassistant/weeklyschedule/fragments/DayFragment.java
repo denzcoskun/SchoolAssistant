@@ -12,6 +12,7 @@ import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.weeklyschedule.activities.EditLessonActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.adapters.LessonAdapter;
+import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -31,7 +32,7 @@ public class DayFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         Bundle bundle = this.getArguments();
-        position = bundle.getInt("position");
+        position = bundle.getInt(LessonConstants.POSITION);
 
         listView = (ListView) getView().findViewById(R.id.day_list);
         MainActivity.lessonAdapters[position] = new LessonAdapter(getActivity(), MainActivity.mainModel.dayModels.get(position).getLessons());
@@ -40,8 +41,8 @@ public class DayFragment extends Fragment {
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(getActivity(), EditLessonActivity.class);
             int listItemPosition = position;
-            intent.putExtra("listItemPosition", listItemPosition);
-            intent.putExtra("position", this.position);
+            intent.putExtra(LessonConstants.LISTITEMPOSITION, listItemPosition);
+            intent.putExtra(LessonConstants.POSITION, this.position);
             startActivity(intent);
         });
     }

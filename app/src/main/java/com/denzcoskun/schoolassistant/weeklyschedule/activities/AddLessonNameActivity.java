@@ -28,12 +28,14 @@ public class AddLessonNameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_lesson_name);
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.add_lesson);
 
         DataHelper dataHelper = new DataHelper(AddLessonNameActivity.this);
 
         buttonAddLesson.setOnClickListener(v -> {
             MainActivity.mainModel.lessonsNames.add(editTextLessonName.getText().toString());
             dataHelper.setModel(MainActivity.mainModel);
+            finish();
         });
     }
 

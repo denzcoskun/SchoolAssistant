@@ -12,6 +12,7 @@ import com.denzcoskun.schoolassistant.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.models.MainModel;
 import com.denzcoskun.schoolassistant.weeklyschedule.activities.AddLessonActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.adapters.LessonAdapter;
+import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.DayModel;
 
 import java.util.ArrayList;
@@ -58,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
         floatingActionButton.setOnClickListener(v -> {
             Intent intent = new Intent(MainActivity.this, AddLessonActivity.class);
-            intent.putExtra("position", tabLayout.getSelectedTabPosition());
+            intent.putExtra(LessonConstants.POSITION, tabLayout.getSelectedTabPosition());
             startActivity(intent);
         });
     }

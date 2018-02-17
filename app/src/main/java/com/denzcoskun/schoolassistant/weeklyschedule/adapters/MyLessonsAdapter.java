@@ -32,7 +32,7 @@ public class MyLessonsAdapter extends BaseAdapter {
 
     public MyLessonsAdapter(Context context) {
         this.context = context;
-        //XML'i alıp View'a çevirecek inflater'ı örnekleyelim
+
         mInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
     }

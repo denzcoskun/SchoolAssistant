@@ -9,6 +9,8 @@ import android.widget.TextView;
 import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
+import com.denzcoskun.schoolassistant.models.MainModel;
+import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -18,8 +20,8 @@ public class EditLessonNameActivity extends AppCompatActivity {
     @BindView(R.id.edit_text_lesson_name)
     EditText editTextLessonName;
 
-    @BindView(R.id.button_add_lesson)
-    TextView buttonAddLesson;
+    @BindView(R.id.button_edit_lesson)
+    TextView buttonEditLesson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +29,18 @@ public class EditLessonNameActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_lesson_name);
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.edit_lesson);
 
-        int position = getIntent().getIntExtra("position",0);
+        int position = getIntent().getIntExtra(LessonConstants.POSITION,0);
+
+        init(position);
 
         DataHelper dataHelper = new DataHelper(EditLessonNameActivity.this);
 
-        buttonAddLesson.setOnClickListener(v -> {
+        buttonEditLesson.setOnClickListener(v -> {
             MainActivity.mainModel.lessonsNames.set(position,editTextLessonName.getText().toString());
             dataHelper.setModel(MainActivity.mainModel);
+            finish();
         });
     }
 
@@ -46,5 +52,9 @@ public class EditLessonNameActivity extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void init(int position){
+        editTextLessonName.setText(MainActivity.mainModel.lessonsNames.get(position));
     }
 }

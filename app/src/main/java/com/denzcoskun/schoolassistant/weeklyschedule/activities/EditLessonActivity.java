@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
+import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
 
 import butterknife.BindView;
@@ -58,10 +59,11 @@ public class EditLessonActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_lesson);
         ButterKnife.bind(this);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.edit_course);
 
         DataHelper dataHelper = new DataHelper(EditLessonActivity.this);
-        int position = getIntent().getIntExtra("position", 0);
-        int listItemPosition = getIntent().getIntExtra("listItemPosition", 0);
+        int position = getIntent().getIntExtra(LessonConstants.POSITION, 0);
+        int listItemPosition = getIntent().getIntExtra(LessonConstants.LISTITEMPOSITION, 0);
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);
@@ -72,12 +74,28 @@ public class EditLessonActivity extends AppCompatActivity {
 
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, (view, hourOfDay, minute) -> {
             if (isStart) {
-                startHour = Integer.toString(hourOfDay);
-                startMinute = Integer.toString(minute);
+                if (hourOfDay < 10) {
+                    startHour = "0" + Integer.toString(hourOfDay);
+                } else {
+                    startHour = Integer.toString(hourOfDay);
+                }
+                if (minute < 10) {
+                    startMinute = "0" + Integer.toString(minute);
+                } else {
+                    startMinute = Integer.toString(minute);
+                }
                 textViewStartTime.setText((startHour + ":" + startMinute));
             } else {
-                finishHour = Integer.toString(hourOfDay);
-                finishMinute = Integer.toString(minute);
+                if (hourOfDay < 10) {
+                    finishHour = "0" + Integer.toString(hourOfDay);
+                } else {
+                    finishHour = Integer.toString(hourOfDay);
+                }
+                if (minute < 10) {
+                    finishMinute = "0" + Integer.toString(minute);
+                } else {
+                    finishMinute = Integer.toString(minute);
+                }
                 textViewFinishTime.setText((finishHour + ":" + finishMinute));
             }
         }, 0, 0, false);
