@@ -20,7 +20,15 @@
 
     <string name="add">Add</string>
     <string name="edit">Edit</string>
+    <string name="classroom">Classroom</string>
     <string name="lesson_name">Lesson Name</string>
+
+    <string name="my_lessons_title">My Lessons</string>
+
+    <string name="add_course">Add Course</string>
+    <string name="add_lesson">Add Lesson</string>
+    <string name="edit_course">Edit Course Name</string>
+    <string name="edit_lesson">Edit Lesson</string>
 
 
 </resources>
