@@ -5,7 +5,7 @@ Develop for students.
 
 This project is being developed for students.
 
-Weekly courses have been added to the project.
+Weekly schedule have been added.
 
 They will be added soon:
 
