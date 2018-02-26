@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant;
+package com.denzcoskun.schoolassistant.weeklyschedule;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,9 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 
-import com.denzcoskun.schoolassistant.adapters.TabsPagerAdapter;
+import com.denzcoskun.schoolassistant.R;
+import com.denzcoskun.schoolassistant.activities.HomeActivity;
+import com.denzcoskun.schoolassistant.weeklyschedule.adapters.TabsPagerAdapter;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.models.MainModel;
 import com.denzcoskun.schoolassistant.weeklyschedule.activities.AddLessonActivity;
@@ -20,7 +22,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+public class WeeklyScheduleActivity extends AppCompatActivity {
 
     @BindView(R.id.tablayout)
     TabLayout tabLayout;
@@ -32,7 +34,6 @@ public class MainActivity extends AppCompatActivity {
     FloatingActionButton floatingActionButton;
 
     private TabsPagerAdapter tabsPagerAdapter = null;
-    public static MainModel mainModel = new MainModel();
     public static LessonAdapter[] lessonAdapters = new LessonAdapter[7];
 
     @Override
@@ -41,14 +42,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         getSupportActionBar().setElevation(0);
-        DataHelper dataHelper = new DataHelper(MainActivity.this);
 
-        if ((MainModel) dataHelper.getModel() == null) {
+        if (HomeActivity.mainModel.dayModels == null) {
             initDays();
-        }else {
-            mainModel = (MainModel) dataHelper.getModel();
         }
-        tabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager(), getBaseContext(), mainModel.dayModels);
+
+        tabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager(), getBaseContext(), HomeActivity.mainModel.dayModels);
 
         for (int i = 0; i < 7; i++) {
             tabLayout.addTab(tabLayout.newTab());
@@ -58,25 +57,25 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
         floatingActionButton.setOnClickListener(v -> {
-            Intent intent = new Intent(MainActivity.this, AddLessonActivity.class);
+            Intent intent = new Intent(WeeklyScheduleActivity.this, AddLessonActivity.class);
             intent.putExtra(LessonConstants.POSITION, tabLayout.getSelectedTabPosition());
             startActivity(intent);
         });
     }
 
     public void initDays() {
-        mainModel.dayModels = new ArrayList<>();
-        mainModel.dayModels.add(new DayModel(getString(R.string.monday)));
-        mainModel.dayModels.add(new DayModel(getString(R.string.tuesday)));
-        mainModel.dayModels.add(new DayModel(getString(R.string.wednesday)));
-        mainModel.dayModels.add(new DayModel(getString(R.string.thursday)));
-        mainModel.dayModels.add(new DayModel(getString(R.string.friday)));
-        mainModel.dayModels.add(new DayModel(getString(R.string.saturday)));
-        mainModel.dayModels.add(new DayModel(getString(R.string.sunday)));
+        HomeActivity.mainModel.dayModels = new ArrayList<>();
+        HomeActivity.mainModel.dayModels.add(new DayModel(getString(R.string.monday)));
+        HomeActivity.mainModel.dayModels.add(new DayModel(getString(R.string.tuesday)));
+        HomeActivity.mainModel.dayModels.add(new DayModel(getString(R.string.wednesday)));
+        HomeActivity.mainModel.dayModels.add(new DayModel(getString(R.string.thursday)));
+        HomeActivity.mainModel.dayModels.add(new DayModel(getString(R.string.friday)));
+        HomeActivity.mainModel.dayModels.add(new DayModel(getString(R.string.saturday)));
+        HomeActivity.mainModel.dayModels.add(new DayModel(getString(R.string.sunday)));
 
-        mainModel.lessonsNames = new ArrayList<>();
-        mainModel.lessonsNames.add(getString(R.string.science));
-        mainModel.lessonsNames.add(getString(R.string.mathematics));
-        mainModel.lessonsNames.add(getString(R.string.history));
+        HomeActivity.mainModel.lessonsNames = new ArrayList<>();
+        HomeActivity.mainModel.lessonsNames.add(getString(R.string.science));
+        HomeActivity.mainModel.lessonsNames.add(getString(R.string.mathematics));
+        HomeActivity.mainModel.lessonsNames.add(getString(R.string.history));
     }
 }

@@ -1,5 +1,6 @@
 package com.denzcoskun.schoolassistant.models;
 
+import com.denzcoskun.schoolassistant.homework.models.HomeworkModel;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.DayModel;
 
 import java.util.List;
@@ -11,4 +12,5 @@ import java.util.List;
 public class MainModel {
     public List<DayModel> dayModels;
     public List<String> lessonsNames;
+    public List<HomeworkModel> homeworkModels;
 }

@@ -12,9 +12,10 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
+import com.denzcoskun.schoolassistant.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
+import com.denzcoskun.schoolassistant.weeklyschedule.WeeklyScheduleActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
 
@@ -66,7 +67,7 @@ public class EditLessonActivity extends AppCompatActivity {
         int listItemPosition = getIntent().getIntExtra(LessonConstants.LISTITEMPOSITION, 0);
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);
+                android.R.layout.simple_spinner_dropdown_item, HomeActivity.mainModel.lessonsNames);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLessons.setAdapter(dataAdapter);
 
@@ -111,22 +112,22 @@ public class EditLessonActivity extends AppCompatActivity {
         });
 
         buttonAddLesson.setOnClickListener(v -> {
-            MainActivity.mainModel.dayModels.get(position).getLessons()
+            HomeActivity.mainModel.dayModels.get(position).getLessons()
                     .set(listItemPosition, new LessonModel(spinnerLessons.getSelectedItem().toString(),
                             spinnerLessons.getSelectedItemPosition(),
                             edittextClassroom.getText().toString(),
                             startHour + ":" + startMinute,
                             finishHour + ":" + finishMinute));
-            MainActivity.lessonAdapters[position].notifyDataSetChanged();
-            dataHelper.setModel(MainActivity.mainModel);
+            WeeklyScheduleActivity.lessonAdapters[position].notifyDataSetChanged();
+            dataHelper.setModel(HomeActivity.mainModel);
             finish();
         });
 
-        imageButtonEditLesson.setOnClickListener(v ->startActivity(new Intent(EditLessonActivity.this,MyLessonsActivity.class)));
+        imageButtonEditLesson.setOnClickListener(v -> startActivity(new Intent(EditLessonActivity.this, MyLessonsActivity.class)));
     }
 
     public void initViews(int position, int listItemPosition) {
-        LessonModel lessonModel = MainActivity.mainModel.dayModels.get(position).getLessons().get(listItemPosition);
+        LessonModel lessonModel = HomeActivity.mainModel.dayModels.get(position).getLessons().get(listItemPosition);
 
         startHour = lessonModel.getStartTime().split(":")[0];
         startMinute = lessonModel.getStartTime().split(":")[1];

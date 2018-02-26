@@ -1,14 +1,13 @@
 package com.denzcoskun.schoolassistant.weeklyschedule.activities;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
+import com.denzcoskun.schoolassistant.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
 
 import butterknife.BindView;
@@ -33,8 +32,8 @@ public class AddLessonNameActivity extends AppCompatActivity {
         DataHelper dataHelper = new DataHelper(AddLessonNameActivity.this);
 
         buttonAddLesson.setOnClickListener(v -> {
-            MainActivity.mainModel.lessonsNames.add(editTextLessonName.getText().toString());
-            dataHelper.setModel(MainActivity.mainModel);
+            HomeActivity.mainModel.lessonsNames.add(editTextLessonName.getText().toString());
+            dataHelper.setModel(HomeActivity.mainModel);
             finish();
         });
     }

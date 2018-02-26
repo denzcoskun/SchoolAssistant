@@ -8,7 +8,8 @@ import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.denzcoskun.schoolassistant.MainActivity;
+import com.denzcoskun.schoolassistant.activities.HomeActivity;
+import com.denzcoskun.schoolassistant.weeklyschedule.WeeklyScheduleActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
 
@@ -32,20 +33,19 @@ public class MyLessonsAdapter extends BaseAdapter {
 
     public MyLessonsAdapter(Context context) {
         this.context = context;
-
         mInflater = (LayoutInflater) context.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return MainActivity.mainModel.lessonsNames.size();
+        return HomeActivity.mainModel.lessonsNames.size();
     }
 
     @Override
     public String getItem(int position) {
         //şöyle de olabilir: public Object getItem(int position)
-        return MainActivity.mainModel.lessonsNames.get(position);
+        return HomeActivity.mainModel.lessonsNames.get(position);
     }
 
     @Override
@@ -63,12 +63,12 @@ public class MyLessonsAdapter extends BaseAdapter {
         DataHelper dataHelper = new DataHelper(context);
         imageButtonMyLessonsDelete.setOnClickListener(v -> {
 
-            MainActivity.mainModel.lessonsNames.remove(position);
-            dataHelper.setModel(MainActivity.mainModel);
+            HomeActivity.mainModel.lessonsNames.remove(position);
+            dataHelper.setModel(HomeActivity.mainModel);
             this.notifyDataSetChanged();
 
         });
-        final String lessonName = MainActivity.mainModel.lessonsNames.get(position);
+        final String lessonName = HomeActivity.mainModel.lessonsNames.get(position);
 
 
         textViewMyLessonsName.setText(lessonName);

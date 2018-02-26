@@ -12,9 +12,10 @@ import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
+import com.denzcoskun.schoolassistant.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
+import com.denzcoskun.schoolassistant.weeklyschedule.WeeklyScheduleActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.LessonModel;
 
@@ -104,21 +105,21 @@ public class AddLessonActivity extends AppCompatActivity {
         });
 
         buttonAddLesson.setOnClickListener(v -> {
-            MainActivity.mainModel.dayModels.get(position).getLessons()
+            HomeActivity.mainModel.dayModels.get(position).getLessons()
                     .add(new LessonModel(spinnerLessons.getSelectedItem().toString(),
                             spinnerLessons.getSelectedItemPosition(),
                             edittextClassroom.getText().toString(),
                             startHour + ":" + startMinute,
                             finishHour + ":" + finishMinute));
-            MainActivity.lessonAdapters[position].notifyDataSetChanged();
-            dataHelper.setModel(MainActivity.mainModel);
+            WeeklyScheduleActivity.lessonAdapters[position].notifyDataSetChanged();
+            dataHelper.setModel(HomeActivity.mainModel);
             finish();
         });
 
         imageButtonEditLesson.setOnClickListener(v -> startActivity(new Intent(AddLessonActivity.this, MyLessonsActivity.class)));
 
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_dropdown_item, MainActivity.mainModel.lessonsNames);
+                android.R.layout.simple_spinner_dropdown_item, HomeActivity.mainModel.lessonsNames);
         dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerLessons.setAdapter(dataAdapter);
     }

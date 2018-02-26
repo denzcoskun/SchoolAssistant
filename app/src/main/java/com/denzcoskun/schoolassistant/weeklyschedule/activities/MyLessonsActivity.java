@@ -5,11 +5,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.denzcoskun.schoolassistant.MainActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.weeklyschedule.adapters.MyLessonsAdapter;
 import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;

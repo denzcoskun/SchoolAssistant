@@ -9,18 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".weeklyschedule.WeeklyScheduleActivity" />
         <activity android:name=".weeklyschedule.activities.AddLessonActivity" />
         <activity android:name=".weeklyschedule.activities.EditLessonActivity" />
         <activity android:name=".weeklyschedule.activities.MyLessonsActivity" />
         <activity android:name=".weeklyschedule.activities.AddLessonNameActivity" />
-        <activity android:name=".weeklyschedule.activities.EditLessonNameActivity"></activity>
+        <activity android:name=".weeklyschedule.activities.EditLessonNameActivity" />
+        <activity android:name=".homework.activities.HomeworkActivity"></activity>
     </application>
 
 </manifest>

@@ -6,10 +6,10 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.denzcoskun.schoolassistant.MainActivity;
+import com.denzcoskun.schoolassistant.activities.HomeActivity;
+import com.denzcoskun.schoolassistant.weeklyschedule.WeeklyScheduleActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
-import com.denzcoskun.schoolassistant.models.MainModel;
 import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 
 import butterknife.BindView;
@@ -38,8 +38,8 @@ public class EditLessonNameActivity extends AppCompatActivity {
         DataHelper dataHelper = new DataHelper(EditLessonNameActivity.this);
 
         buttonEditLesson.setOnClickListener(v -> {
-            MainActivity.mainModel.lessonsNames.set(position,editTextLessonName.getText().toString());
-            dataHelper.setModel(MainActivity.mainModel);
+            HomeActivity.mainModel.lessonsNames.set(position,editTextLessonName.getText().toString());
+            dataHelper.setModel(HomeActivity.mainModel);
             finish();
         });
     }
@@ -55,6 +55,6 @@ public class EditLessonNameActivity extends AppCompatActivity {
     }
 
     public void init(int position){
-        editTextLessonName.setText(MainActivity.mainModel.lessonsNames.get(position));
+        editTextLessonName.setText(HomeActivity.mainModel.lessonsNames.get(position));
     }
 }

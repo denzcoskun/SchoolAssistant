@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-import com.denzcoskun.schoolassistant.MainActivity;
+import com.denzcoskun.schoolassistant.activities.HomeActivity;
+import com.denzcoskun.schoolassistant.weeklyschedule.WeeklyScheduleActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.weeklyschedule.activities.EditLessonActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.adapters.LessonAdapter;
@@ -35,8 +36,8 @@ public class DayFragment extends Fragment {
         position = bundle.getInt(LessonConstants.POSITION);
 
         listView = (ListView) getView().findViewById(R.id.day_list);
-        MainActivity.lessonAdapters[position] = new LessonAdapter(getActivity(), MainActivity.mainModel.dayModels.get(position).getLessons());
-        listView.setAdapter(MainActivity.lessonAdapters[position]);
+        WeeklyScheduleActivity.lessonAdapters[position] = new LessonAdapter(getActivity(), HomeActivity.mainModel.dayModels.get(position).getLessons());
+        listView.setAdapter(WeeklyScheduleActivity.lessonAdapters[position]);
 
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Intent intent = new Intent(getActivity(), EditLessonActivity.class);
