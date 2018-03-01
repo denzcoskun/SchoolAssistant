@@ -22,7 +22,9 @@
         <activity android:name=".weeklyschedule.activities.MyLessonsActivity" />
         <activity android:name=".weeklyschedule.activities.AddLessonNameActivity" />
         <activity android:name=".weeklyschedule.activities.EditLessonNameActivity" />
-        <activity android:name=".homework.activities.HomeworkActivity"></activity>
+        <activity android:name=".homework.activities.HomeworkActivity" />
+        <activity android:name=".homework.activities.AddHomeworkActivity" />
+        <activity android:name=".homework.activities.EditHomeworkActivity"></activity>
     </application>
 
 </manifest>

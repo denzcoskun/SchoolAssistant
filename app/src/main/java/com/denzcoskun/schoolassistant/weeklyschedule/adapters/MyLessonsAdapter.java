@@ -44,7 +44,6 @@ public class MyLessonsAdapter extends BaseAdapter {
 
     @Override
     public String getItem(int position) {
-        //şöyle de olabilir: public Object getItem(int position)
         return HomeActivity.mainModel.lessonsNames.get(position);
     }
 

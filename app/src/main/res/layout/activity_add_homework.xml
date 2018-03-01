@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_yeni_odev_duzenle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <EditText
+            android:layout_width="match_parent"
+            android:hint="@string/homework_name"
+            android:id="@+id/textview_add_homework_name"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:lines="4"
+            android:inputType="textMultiLine"
+            android:hint="@string/homework_subject"
+            android:gravity="top"
+            android:id="@+id/textview_add_homework_subject"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:paddingTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="@string/homework_date"
+                    android:textSize="18sp"
+                    android:textColor="@android:color/black"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:layout_gravity="center"
+                    android:paddingLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:text=""
+                    android:id="@+id/textview_add_homework_date"
+                    android:textSize="18sp"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <ImageButton
+                android:layout_alignParentRight="true"
+                android:layout_width="50dp"
+                android:src="@drawable/ic_calendar"
+                android:id="@+id/imagebutton_choose_date"
+                android:background="@drawable/button_background"
+                android:layout_height="50dp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:paddingTop="10dp"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_gravity="center"
+                android:text="@string/add"
+                android:id="@+id/button_add_homework"
+                android:textColor="@android:color/white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
