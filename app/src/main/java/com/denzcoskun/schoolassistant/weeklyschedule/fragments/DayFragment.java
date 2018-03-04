@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.denzcoskun.schoolassistant.activities.HomeActivity;
-import com.denzcoskun.schoolassistant.weeklyschedule.WeeklyScheduleActivity;
+import com.denzcoskun.schoolassistant.weeklyschedule.activities.WeeklyScheduleActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.weeklyschedule.activities.EditLessonActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.adapters.LessonAdapter;

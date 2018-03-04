@@ -60,7 +60,7 @@ public class HomeworkAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View view = mInflater.inflate(R.layout.my_lessons_row, null);
+        View view = mInflater.inflate(R.layout.homework_row, null);
         ButterKnife.bind(this, view);
 
         DataHelper dataHelper = new DataHelper(context);

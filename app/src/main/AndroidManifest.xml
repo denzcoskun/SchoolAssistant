@@ -16,7 +16,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".weeklyschedule.WeeklyScheduleActivity" />
+        <activity android:name=".weeklyschedule.activities.WeeklyScheduleActivity" />
         <activity android:name=".weeklyschedule.activities.AddLessonActivity" />
         <activity android:name=".weeklyschedule.activities.EditLessonActivity" />
         <activity android:name=".weeklyschedule.activities.MyLessonsActivity" />

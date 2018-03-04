@@ -9,6 +9,12 @@ public class HomeworkModel {
     private String homeworkSubject;
     private String homeworkDate;
 
+    public HomeworkModel(String homeworkName, String homeworkSubject, String homeworkDate) {
+        this.homeworkName = homeworkName;
+        this.homeworkSubject = homeworkSubject;
+        this.homeworkDate = homeworkDate;
+    }
+
     public String getHomeworkName() {
         return homeworkName;
     }

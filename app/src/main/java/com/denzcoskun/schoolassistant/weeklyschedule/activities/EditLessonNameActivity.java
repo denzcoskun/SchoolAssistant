@@ -7,7 +7,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.denzcoskun.schoolassistant.activities.HomeActivity;
-import com.denzcoskun.schoolassistant.weeklyschedule.WeeklyScheduleActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;

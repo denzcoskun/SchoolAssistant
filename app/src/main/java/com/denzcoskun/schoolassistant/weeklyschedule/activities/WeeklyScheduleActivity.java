@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.weeklyschedule;
+package com.denzcoskun.schoolassistant.weeklyschedule.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,9 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.adapters.TabsPagerAdapter;
-import com.denzcoskun.schoolassistant.helpers.DataHelper;
-import com.denzcoskun.schoolassistant.models.MainModel;
-import com.denzcoskun.schoolassistant.weeklyschedule.activities.AddLessonActivity;
 import com.denzcoskun.schoolassistant.weeklyschedule.adapters.LessonAdapter;
 import com.denzcoskun.schoolassistant.weeklyschedule.constants.LessonConstants;
 import com.denzcoskun.schoolassistant.weeklyschedule.models.DayModel;

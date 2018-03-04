@@ -34,5 +34,8 @@
     <string name="homework_subject">Homework Subject</string>
     <string name="homework_date">Homework Date:</string>
 
+    <string name="home_calendar">Weekly Schedule</string>
+    <string name="home_homework">Homeworks</string>
+    <string name="home_exam">Exams</string>
 
 </resources>
