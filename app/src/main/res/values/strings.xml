@@ -38,4 +38,6 @@
     <string name="home_homework">Homeworks</string>
     <string name="home_exam">Exams</string>
 
+    <string name="message_error">Message Error</string>
+    <string name="volley_error">Volley Error</string>
 </resources>

@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.denzcoskun.schoolassistant">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,22 +12,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.HomeActivity">
+        <activity android:name=".project.activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".weeklyschedule.activities.WeeklyScheduleActivity" />
-        <activity android:name=".weeklyschedule.activities.AddLessonActivity" />
-        <activity android:name=".weeklyschedule.activities.EditLessonActivity" />
-        <activity android:name=".weeklyschedule.activities.MyLessonsActivity" />
-        <activity android:name=".weeklyschedule.activities.AddLessonNameActivity" />
-        <activity android:name=".weeklyschedule.activities.EditLessonNameActivity" />
-        <activity android:name=".homework.activities.HomeworkActivity" />
-        <activity android:name=".homework.activities.AddHomeworkActivity" />
-        <activity android:name=".homework.activities.EditHomeworkActivity"></activity>
+        <activity android:name=".project.homework.activities.HomeworkActivity"/>
+        <activity android:name=".project.weeklyschedule.activities.WeeklyScheduleActivity" />
+        <activity android:name=".project.weeklyschedule.activities.AddLessonActivity" />
+        <activity android:name=".project.weeklyschedule.activities.EditLessonActivity" />
+        <activity android:name=".project.weeklyschedule.activities.MyLessonsActivity" />
+        <activity android:name=".project.weeklyschedule.activities.AddLessonNameActivity" />
+        <activity android:name=".project.weeklyschedule.activities.EditLessonNameActivity" />
+        <activity android:name=".project.homework.activities.AddHomeworkActivity" />
+        <activity android:name=".project.homework.activities.EditHomeworkActivity"/>
     </application>
 
 </manifest>
