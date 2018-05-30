@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.activities;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.constants.LessonConstants;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.LessonConstants;
 
 import java.util.Objects;
 

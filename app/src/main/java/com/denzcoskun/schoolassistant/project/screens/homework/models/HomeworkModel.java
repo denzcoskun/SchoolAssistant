@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.homework.models;
+package com.denzcoskun.schoolassistant.project.screens.homework.models;
 
 /**
  * Created by Denx on 26.02.2018.

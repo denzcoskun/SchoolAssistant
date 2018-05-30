@@ -1,7 +1,8 @@
 package com.denzcoskun.schoolassistant.project.models;
 
-import com.denzcoskun.schoolassistant.project.homework.models.HomeworkModel;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.models.DayModel;
+
+import com.denzcoskun.schoolassistant.project.screens.homework.models.HomeworkModel;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models.DayModel;
 
 import java.util.List;
 

@@ -1,4 +1,37 @@
 <resources>
+    <!--Course Names-->
+    <string name="science">Science</string>
+    <string name="mathematics">Mathematics</string>
+    <string name="history">History</string>
+    <!--Data-->
+    <string name="application_data">Application Data</string>
+    <string name="student_data">Student Data</string>
+    <!--Lesson-->
+    <string name="add">Add</string>
+    <string name="weekly_schedule">Weekly Schedule</string>
+    <string name="edit">Edit</string>
+    <string name="classroom">Classroom</string>
+    <string name="lesson_name">Lesson Name</string>
+    <string name="my_lessons_title">My Lessons</string>
+    <string name="add_course">Add Course</string>
+    <string name="add_lesson">Add Lesson</string>
+    <string name="edit_course">Edit Course Name</string>
+    <string name="edit_lesson">Edit Lesson</string>
+    <string name="start_time">Start Time: </string>
+    <string name="finish_time">Finish Time: </string>
+    <!--Homework-->
+    <string name="add_homework">Add Homework</string>
+    <string name="edit_homework">Edit Homework</string>
+    <string name="homework_name">Homework Name</string>
+    <string name="homework_subject">Homework Subject</string>
+    <string name="homework_date">Date:</string>
+    <string name="home_calendar">Weekly Schedule</string>
+    <string name="home_homework">Homeworks</string>
+    <string name="home_exam">Exams</string>
+    <!--Error-->
+    <string name="message_error">Message Error</string>
+    <string name="volley_error">Volley Error</string>
+    <!--Days-->
     <string name="app_name">School Assistant</string>
     <string name="monday">Monday</string>
     <string name="tuesday">Tuesday</string>
@@ -6,38 +39,5 @@
     <string name="thursday">Thursday</string>
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
-    <string name="sunday">Sunday</string>
-
-    <string name="start_time">Start Time: </string>
-    <string name="finish_time">Finish Time: </string>
-
-    <string name="science">Science</string>
-    <string name="mathematics">Mathematics</string>
-    <string name="history">History</string>
-
-    <string name="application_data">Application Data</string>
-    <string name="student_data">Student Data</string>
-
-    <string name="add">Add</string>
-    <string name="edit">Edit</string>
-    <string name="classroom">Classroom</string>
-    <string name="lesson_name">Lesson Name</string>
-
-    <string name="my_lessons_title">My Lessons</string>
-
-    <string name="add_course">Add Course</string>
-    <string name="add_lesson">Add Lesson</string>
-    <string name="edit_course">Edit Course Name</string>
-    <string name="edit_lesson">Edit Lesson</string>
-
-    <string name="homework_name">Homework Name</string>
-    <string name="homework_subject">Homework Subject</string>
-    <string name="homework_date">Homework Date:</string>
-
-    <string name="home_calendar">Weekly Schedule</string>
-    <string name="home_homework">Homeworks</string>
-    <string name="home_exam">Exams</string>
-
-    <string name="message_error">Message Error</string>
-    <string name="volley_error">Volley Error</string>
+    <string name="sunday">Sunday</string>s
 </resources>

@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.adapters;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,7 +12,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.denzcoskun.schoolassistant.R;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.models.LessonModel;
+import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
+import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models.LessonModel;
 
 import java.util.List;
 import java.util.Random;
@@ -41,6 +43,7 @@ public class LessonAdapter extends BaseAdapter {
     @BindView(R.id.lesson_delete)
     ImageButton lessonDeleteButton;
 
+    private DataHelper dataHelper;
     private LayoutInflater mInflater;
     private List<LessonModel> lessons;
 
@@ -48,6 +51,8 @@ public class LessonAdapter extends BaseAdapter {
         mInflater = (LayoutInflater) activity.getSystemService(
                 Context.LAYOUT_INFLATER_SERVICE);
         this.lessons = lessons;
+
+         dataHelper = new DataHelper(activity);
     }
 
     @Override
@@ -71,15 +76,14 @@ public class LessonAdapter extends BaseAdapter {
         view = mInflater.inflate(R.layout.day_lesson_row, null);
         ButterKnife.bind(this,view);
 
-
-
-        Random rnd = new Random();
-        int color = Color.argb(255, rnd.nextInt(256), rnd.nextInt(256), rnd.nextInt(256));
+        Random random = new Random();
+        int color = Color.argb(255, random.nextInt(256), random.nextInt(256), random.nextInt(256));
 
         randomLessonColor.setBackgroundColor(color);
 
         lessonDeleteButton.setOnClickListener(click-> {
                 lessons.remove(position);
+                dataHelper.setModel(HomeActivity.mainModel);
                 this.notifyDataSetChanged();
         });
 

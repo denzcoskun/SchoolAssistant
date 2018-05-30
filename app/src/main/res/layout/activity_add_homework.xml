@@ -54,7 +54,7 @@
                 android:layout_width="50dp"
                 android:src="@drawable/ic_calendar"
                 android:id="@+id/imagebutton_choose_date"
-                android:background="@drawable/button_background"
+                android:background="@drawable/oval_button_background"
                 android:layout_height="50dp" />
         </RelativeLayout>
         <LinearLayout

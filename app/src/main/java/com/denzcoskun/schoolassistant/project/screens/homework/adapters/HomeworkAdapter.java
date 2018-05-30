@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.homework.adapters;
+package com.denzcoskun.schoolassistant.project.screens.homework.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
-import com.denzcoskun.schoolassistant.project.homework.models.HomeworkModel;
+import com.denzcoskun.schoolassistant.project.screens.homework.models.HomeworkModel;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -64,15 +64,15 @@ public class HomeworkAdapter extends BaseAdapter {
         ButterKnife.bind(this, view);
 
         DataHelper dataHelper = new DataHelper(context);
-        imageButtonHomeworkDelete.setOnClickListener(v -> {
 
+        imageButtonHomeworkDelete.setOnClickListener(v -> {
             HomeActivity.mainModel.homeworkModels.remove(position);
             dataHelper.setModel(HomeActivity.mainModel);
             this.notifyDataSetChanged();
 
         });
-        final HomeworkModel homeworkModel = HomeActivity.mainModel.homeworkModels.get(position);
 
+        final HomeworkModel homeworkModel = HomeActivity.mainModel.homeworkModels.get(position);
 
         textViewHomeworkName.setText(homeworkModel.getHomeworkName());
         textViewHomeworkSubject.setText(homeworkModel.getHomeworkSubject());

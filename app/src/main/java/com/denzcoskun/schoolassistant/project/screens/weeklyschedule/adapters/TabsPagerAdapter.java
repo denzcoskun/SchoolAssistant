@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.adapters;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -7,8 +7,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 
-import com.denzcoskun.schoolassistant.project.weeklyschedule.fragments.DayFragment;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.models.DayModel;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.fragments.DayFragment;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models.DayModel;
 
 import java.util.List;
 

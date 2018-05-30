@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.activities;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

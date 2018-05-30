@@ -1,18 +1,19 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.activities;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
+import android.view.MenuItem;
 
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.adapters.LessonAdapter;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.adapters.TabsPagerAdapter;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.constants.LessonConstants;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.models.DayModel;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters.LessonAdapter;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters.TabsPagerAdapter;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.LessonConstants;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models.DayModel;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -36,6 +37,8 @@ public class WeeklyScheduleActivity extends BaseActivity {
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
         Objects.requireNonNull(getSupportActionBar()).setElevation(0);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.weekly_schedule);
 
         if (HomeActivity.mainModel.dayModels == null) {
             initDays();
@@ -76,5 +79,15 @@ public class WeeklyScheduleActivity extends BaseActivity {
         HomeActivity.mainModel.lessonsNames.add(getString(R.string.science));
         HomeActivity.mainModel.lessonsNames.add(getString(R.string.mathematics));
         HomeActivity.mainModel.lessonsNames.add(getString(R.string.history));
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

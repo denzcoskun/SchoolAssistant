@@ -7,9 +7,9 @@ import android.widget.LinearLayout;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
-import com.denzcoskun.schoolassistant.project.homework.activities.HomeworkActivity;
 import com.denzcoskun.schoolassistant.project.models.MainModel;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.activities.WeeklyScheduleActivity;
+import com.denzcoskun.schoolassistant.project.screens.homework.activities.HomeworkActivity;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities.WeeklyScheduleActivity;
 
 import butterknife.BindView;
 

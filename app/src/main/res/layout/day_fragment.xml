@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
     <ListView
         android:id="@+id/day_list"
-        android:paddingTop="60dp"
+        android:paddingTop="58dp"
         android:divider="@android:color/transparent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

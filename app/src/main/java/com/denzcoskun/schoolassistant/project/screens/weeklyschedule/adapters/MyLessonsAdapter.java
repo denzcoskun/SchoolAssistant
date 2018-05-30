@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.adapters;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;

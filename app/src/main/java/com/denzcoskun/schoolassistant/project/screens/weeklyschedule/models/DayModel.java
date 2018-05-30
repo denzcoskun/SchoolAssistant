@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.models;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models;
 
 import java.io.Serializable;
 import java.util.ArrayList;

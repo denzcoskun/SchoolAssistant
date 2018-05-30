@@ -29,7 +29,7 @@
                         android:src="@drawable/ic_pencil"
                         android:id="@+id/image_button_edit_lesson"
                         android:scaleType="fitXY"
-                        android:background="@drawable/button_background"
+                        android:background="@drawable/oval_button_background"
                         android:layout_height="50dp" />
                 </LinearLayout>
 
@@ -73,7 +73,7 @@
                     android:src="@drawable/ic_clock"
                     android:scaleType="fitXY"
                     android:id="@+id/image_button_edit_start_time"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/oval_button_background"
                     android:layout_height="50dp" />
             </LinearLayout>
         </RelativeLayout>
@@ -109,7 +109,7 @@
                     android:src="@drawable/ic_clock"
                     android:scaleType="fitXY"
                     android:id="@+id/image_button_edit_finish_time"
-                    android:background="@drawable/button_background"
+                    android:background="@drawable/oval_button_background"
                     android:layout_height="50dp" />
             </LinearLayout>
         </RelativeLayout>

@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.activities;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities;
 
 import android.app.TimePickerDialog;
 import android.content.Intent;
@@ -15,8 +15,8 @@ import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.constants.LessonConstants;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.models.LessonModel;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.LessonConstants;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models.LessonModel;
 
 import java.util.Objects;
 

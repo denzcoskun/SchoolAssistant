@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.constants;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants;
 
 /**
  * Created by Denx on 12.02.2018.

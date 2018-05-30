@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.homework.activities;
+package com.denzcoskun.schoolassistant.project.screens.homework.activities;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
@@ -13,16 +13,18 @@ import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
-import com.denzcoskun.schoolassistant.project.homework.models.HomeworkModel;
+import com.denzcoskun.schoolassistant.project.screens.homework.constants.HomeworkConstants;
+import com.denzcoskun.schoolassistant.project.screens.homework.models.HomeworkModel;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Objects;
 
 import butterknife.BindView;
 
-public class AddHomeworkActivity extends BaseActivity {
+public class EditHomeworkActivity extends BaseActivity {
 
     @BindView(R.id.textview_add_homework_name)
     EditText textviewAddHomeworkName;
@@ -36,7 +38,7 @@ public class AddHomeworkActivity extends BaseActivity {
     @BindView(R.id.imagebutton_choose_date)
     ImageButton imagebuttonChooseDate;
 
-    @BindView(R.id.button_add_homework)
+    @BindView(R.id.button_edit_homework)
     Button buttonAddHomework;
 
     private int year;
@@ -47,8 +49,11 @@ public class AddHomeworkActivity extends BaseActivity {
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        setTitle(R.string.edit_homework);
+        DataHelper dataHelper = new DataHelper(EditHomeworkActivity.this);
 
-        DataHelper dataHelper = new DataHelper(AddHomeworkActivity.this);
+        int position = getIntent().getIntExtra(HomeworkConstants.LISTITEMPOSITION, 0);
+        init(position);
 
         Calendar c = Calendar.getInstance();
         year = c.get(Calendar.YEAR);
@@ -59,13 +64,15 @@ public class AddHomeworkActivity extends BaseActivity {
             this.year = dateOfYear;
             this.month = monthOfYear;
             this.day = dayOfMonth;
+            Date date = new GregorianCalendar(year, month, day).getTime();
+            textviewAddHomeworkDate.setText(dateOfString(date));
         }, year, month, day);
 
         imagebuttonChooseDate.setOnClickListener(v -> datePickerDialog.show());
 
         buttonAddHomework.setOnClickListener(v -> {
             Date date = new Date(year - 1900, month, day);
-            HomeActivity.mainModel.homeworkModels.add(new HomeworkModel(
+            HomeActivity.mainModel.homeworkModels.set(position, new HomeworkModel(
                     textviewAddHomeworkName.getText().toString(),
                     textviewAddHomeworkSubject.getText().toString(),
                     dateOfString(date)));
@@ -76,7 +83,7 @@ public class AddHomeworkActivity extends BaseActivity {
 
     @Override
     protected int getLayoutResourceId() {
-        return R.layout.activity_add_homework;
+        return R.layout.activity_edit_homework;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -87,6 +94,12 @@ public class AddHomeworkActivity extends BaseActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void init(int position){
+        textviewAddHomeworkName.setText(HomeActivity.mainModel.homeworkModels.get(position).getHomeworkName());
+        textviewAddHomeworkSubject.setText(HomeActivity.mainModel.homeworkModels.get(position).getHomeworkSubject());
+        textviewAddHomeworkDate.setText(HomeActivity.mainModel.homeworkModels.get(position).getHomeworkDate());
     }
 
     public static String dateOfString(Date date) {

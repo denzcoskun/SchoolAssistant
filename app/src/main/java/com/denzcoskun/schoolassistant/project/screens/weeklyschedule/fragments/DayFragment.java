@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.fragments;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.fragments;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,10 +10,10 @@ import android.widget.ListView;
 
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.activities.EditLessonActivity;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.activities.WeeklyScheduleActivity;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.adapters.LessonAdapter;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.constants.LessonConstants;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities.EditLessonActivity;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities.WeeklyScheduleActivity;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters.LessonAdapter;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.LessonConstants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

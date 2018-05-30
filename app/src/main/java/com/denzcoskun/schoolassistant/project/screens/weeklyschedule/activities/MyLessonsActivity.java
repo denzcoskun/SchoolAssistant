@@ -1,4 +1,4 @@
-package com.denzcoskun.schoolassistant.project.weeklyschedule.activities;
+package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities;
 
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
@@ -8,8 +8,8 @@ import android.widget.ListView;
 
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.adapters.MyLessonsAdapter;
-import com.denzcoskun.schoolassistant.project.weeklyschedule.constants.LessonConstants;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters.MyLessonsAdapter;
+import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.LessonConstants;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
