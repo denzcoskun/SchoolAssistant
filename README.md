@@ -9,8 +9,6 @@ Weekly schedule have been added.
 
 They will be added soon:
 
- Following the homework,
- Exam schedule,
  Notes,
  Transcript calculation,
  Course average,
