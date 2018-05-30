@@ -28,6 +28,13 @@
     <string name="home_calendar">Weekly Schedule</string>
     <string name="home_homework">Homeworks</string>
     <string name="home_exam">Exams</string>
+    <!--Exam-->
+    <string name="add_exam">Add Exam</string>
+    <string name="edit_exam">Edit Exam</string>
+    <string name="exam_name">Exam Name</string>
+    <string name="exam_classroom">Exam Classroom</string>
+    <string name="exam_date">Date:</string>
+    <string name="exam_time">Time:</string>
     <!--Error-->
     <string name="message_error">Message Error</string>
     <string name="volley_error">Volley Error</string>

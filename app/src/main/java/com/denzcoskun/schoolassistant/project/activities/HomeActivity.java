@@ -8,6 +8,7 @@ import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.project.models.MainModel;
+import com.denzcoskun.schoolassistant.project.screens.exams.activities.ExamsActivity;
 import com.denzcoskun.schoolassistant.project.screens.homework.activities.HomeworkActivity;
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities.WeeklyScheduleActivity;
 
@@ -38,7 +39,7 @@ public class HomeActivity extends BaseActivity {
 
         linearLayoutCalendar.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, WeeklyScheduleActivity.class)));
         linearLayoutHomeworks.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, HomeworkActivity.class)));
-        //linearLayoutCalendar.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this,.class)));
+        linearLayoutExams.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this,ExamsActivity.class)));
     }
 
     @Override

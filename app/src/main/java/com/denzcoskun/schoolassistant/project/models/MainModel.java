@@ -1,6 +1,7 @@
 package com.denzcoskun.schoolassistant.project.models;
 
 
+import com.denzcoskun.schoolassistant.project.screens.exams.models.ExamModel;
 import com.denzcoskun.schoolassistant.project.screens.homework.models.HomeworkModel;
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models.DayModel;
 
@@ -14,4 +15,5 @@ public class MainModel {
     public List<DayModel> dayModels;
     public List<String> lessonsNames;
     public List<HomeworkModel> homeworkModels;
+    public List<ExamModel> examModels;
 }

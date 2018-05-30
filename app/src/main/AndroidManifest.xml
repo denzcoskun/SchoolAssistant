@@ -28,6 +28,9 @@
         <activity android:name=".project.screens.weeklyschedule.activities.EditLessonNameActivity" />
         <activity android:name=".project.screens.homework.activities.AddHomeworkActivity" />
         <activity android:name=".project.screens.homework.activities.EditHomeworkActivity"/>
+        <activity android:name=".project.screens.exams.activities.ExamsActivity"/>
+        <activity android:name=".project.screens.exams.activities.AddExamActivity" />
+        <activity android:name=".project.screens.exams.activities.EditExamActivity" />
     </application>
 
 </manifest>
