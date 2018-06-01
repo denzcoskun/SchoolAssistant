@@ -1,32 +1,33 @@
-package com.denzcoskun.schoolassistant.base.activities;
+package com.denzcoskun.libdenx.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.CallSuper;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.denzcoskun.schoolassistant.R;
-import com.denzcoskun.schoolassistant.base.interfaces.VolleyCallBack;
-import com.denzcoskun.schoolassistant.base.models.BaseResponseModel;
-import com.denzcoskun.schoolassistant.base.utils.NetworkUtils;
+import com.denzcoskun.libdenx.R;
+import com.denzcoskun.libdenx.interfaces.VolleyCallBack;
+import com.denzcoskun.libdenx.models.BaseResponseModel;
+import com.denzcoskun.libdenx.utils.NetworkUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.Objects;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by Denx on 28.05.2018.
+ * Created by Denx on 1.06.2018.
  */
-
 abstract public class BaseActivity extends AppCompatActivity implements VolleyCallBack<BaseResponseModel> {
 
     private Unbinder unbinder = null;
@@ -53,7 +54,7 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
     }
 
     public void showMassage(int message){
-            showMassage(getString(message));
+        showMassage(getString(message));
     }
 
     public boolean isNetworkConnected(){
@@ -80,6 +81,20 @@ abstract public class BaseActivity extends AppCompatActivity implements VolleyCa
     public void onDestroy(){
         if(unbinder!= null){unbinder.unbind();}
         super.onDestroy();
+    }
+
+    public void addBackButton(){
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override

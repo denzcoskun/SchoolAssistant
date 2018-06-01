@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LibDenX</string>
+    <string name="message_error">Error</string>
+    <string name="volley_error">Volley Error</string>
+</resources>

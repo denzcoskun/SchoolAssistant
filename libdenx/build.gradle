@@ -1,14 +1,15 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.denzcoskun.schoolassistant"
         minSdkVersion 14
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
     buildTypes {
         release {
@@ -21,13 +22,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
     }
     buildToolsVersion '27.0.3'
-    productFlavors {
-    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support:appcompat-v7:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -39,5 +37,4 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.8.5'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.8.5'
     implementation 'com.fasterxml.jackson.core:jackson-annotations:2.8.5'
-    implementation project(path: ':libdenx')
 }

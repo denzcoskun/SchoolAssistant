@@ -6,8 +6,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.denzcoskun.libdenx.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.R;
-import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters.MyLessonsAdapter;
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.LessonConstants;
 

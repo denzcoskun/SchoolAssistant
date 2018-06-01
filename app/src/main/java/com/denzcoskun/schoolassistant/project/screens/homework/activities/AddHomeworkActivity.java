@@ -9,8 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.denzcoskun.libdenx.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.R;
-import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.project.screens.homework.models.HomeworkModel;

@@ -7,8 +7,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.view.MenuItem;
 
+import com.denzcoskun.libdenx.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.R;
-import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters.LessonAdapter;
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters.TabsPagerAdapter;

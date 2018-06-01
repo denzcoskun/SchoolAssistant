@@ -4,8 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 
+import com.denzcoskun.libdenx.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.R;
-import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.project.models.MainModel;
 import com.denzcoskun.schoolassistant.project.screens.exams.activities.ExamsActivity;

@@ -6,14 +6,13 @@ import android.support.design.widget.FloatingActionButton;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.denzcoskun.libdenx.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.R;
-import com.denzcoskun.schoolassistant.base.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.screens.exams.adapters.ExamAdapter;
 import com.denzcoskun.schoolassistant.project.screens.exams.constants.ExamConstants;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -34,7 +33,7 @@ public class ExamsActivity extends BaseActivity {
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
         setTitle(R.string.home_exam);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        addBackButton();
         if (HomeActivity.mainModel.examModels == null) {
             initExams();
         }
@@ -56,15 +55,6 @@ public class ExamsActivity extends BaseActivity {
         return R.layout.activity_exams;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     public void initExams() {
         HomeActivity.mainModel.examModels = new ArrayList<>();
