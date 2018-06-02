@@ -2,7 +2,6 @@ package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -10,8 +9,6 @@ import com.denzcoskun.libdenx.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.R;
 import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
-
-import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -26,8 +23,7 @@ public class AddLessonNameActivity extends BaseActivity {
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
-
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        addBackButton();
         setTitle(R.string.add_lesson);
 
         DataHelper dataHelper = new DataHelper(AddLessonNameActivity.this);
@@ -44,13 +40,4 @@ public class AddLessonNameActivity extends BaseActivity {
         return R.layout.activity_add_lesson_name;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -21,7 +20,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -60,10 +58,10 @@ public class EditExamActivity extends BaseActivity {
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        addBackButton();
         setTitle(R.string.edit_exam);
 
-        int position = getIntent().getIntExtra(ExamConstants.LISTITEMPOSITION,0);
+        int position = getIntent().getIntExtra(ExamConstants.LISTITEMPOSITION, 0);
         init(position);
 
         DataHelper dataHelper = new DataHelper(EditExamActivity.this);
@@ -116,21 +114,11 @@ public class EditExamActivity extends BaseActivity {
         return R.layout.activity_edit_exam;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
     public static String dateOfString(Date date) {
         return new SimpleDateFormat("dd MMMM EEEE yyyy").format(date);
     }
 
-    public void init(int position){
+    public void init(int position) {
         textviewAddExamName.setText(HomeActivity.mainModel.examModels.get(position).getExamName());
         textviewAddExamSubject.setText(HomeActivity.mainModel.examModels.get(position).getExamSubject());
         textviewAddExamDate.setText(HomeActivity.mainModel.examModels.get(position).getExamDate());

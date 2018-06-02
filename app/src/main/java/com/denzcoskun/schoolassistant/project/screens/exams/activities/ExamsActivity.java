@@ -3,7 +3,6 @@ package com.denzcoskun.schoolassistant.project.screens.exams.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.view.MenuItem;
 import android.widget.ListView;
 
 import com.denzcoskun.libdenx.activities.BaseActivity;
@@ -42,8 +41,8 @@ public class ExamsActivity extends BaseActivity {
         listviewExams.setAdapter(examAdapter);
         listviewExams.setClickable(false);
         listviewExams.setOnItemClickListener((parent, view, position, id) -> {
-            Intent i = new Intent(this,EditExamActivity.class);
-            i.putExtra(ExamConstants.LISTITEMPOSITION,position);
+            Intent i = new Intent(this, EditExamActivity.class);
+            i.putExtra(ExamConstants.LISTITEMPOSITION, position);
             startActivity(i);
         });
 
@@ -61,7 +60,7 @@ public class ExamsActivity extends BaseActivity {
     }
 
     @Override
-    public void onResume(){
+    public void onResume() {
         super.onResume();
         examAdapter.notifyDataSetChanged();
     }

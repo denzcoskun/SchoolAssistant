@@ -4,7 +4,6 @@ import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,7 +19,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -59,7 +57,7 @@ public class AddExamActivity extends BaseActivity {
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        addBackButton();
         setTitle(R.string.add_exam);
         DataHelper dataHelper = new DataHelper(AddExamActivity.this);
 
@@ -77,17 +75,17 @@ public class AddExamActivity extends BaseActivity {
         }, year, month, day);
 
         TimePickerDialog timePickerDialog = new TimePickerDialog(this, (view, hourOfDay, minuteOfHour) -> {
-                if (hourOfDay < 10) {
-                    hour = "0" + Integer.toString(hourOfDay);
-                } else {
-                    hour = Integer.toString(hourOfDay);
-                }
-                if (minuteOfHour < 10) {
-                    minute = "0" + Integer.toString(minuteOfHour);
-                } else {
-                    minute = Integer.toString(minuteOfHour);
-                }
-                textviewAddExamTime.setText((hour + ":" + minute));
+            if (hourOfDay < 10) {
+                hour = "0" + Integer.toString(hourOfDay);
+            } else {
+                hour = Integer.toString(hourOfDay);
+            }
+            if (minuteOfHour < 10) {
+                minute = "0" + Integer.toString(minuteOfHour);
+            } else {
+                minute = Integer.toString(minuteOfHour);
+            }
+            textviewAddExamTime.setText((hour + ":" + minute));
 
         }, 0, 0, false);
 
@@ -111,19 +109,8 @@ public class AddExamActivity extends BaseActivity {
         return R.layout.activity_add_exam;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
     public static String dateOfString(Date date) {
         return new SimpleDateFormat("dd MMMM EEEE yyyy").format(date);
     }
-
 
 }

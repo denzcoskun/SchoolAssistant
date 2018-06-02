@@ -1,9 +1,8 @@
 package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.support.design.widget.FloatingActionButton;
 import android.widget.ListView;
 
 import com.denzcoskun.libdenx.activities.BaseActivity;
@@ -12,7 +11,6 @@ import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.adapters.My
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.LessonConstants;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class MyLessonsActivity extends BaseActivity {
 
@@ -27,10 +25,10 @@ public class MyLessonsActivity extends BaseActivity {
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        addBackButton();
         setTitle(R.string.my_lessons_title);
 
-        myLessonsAdapter =new MyLessonsAdapter(MyLessonsActivity.this);
+        myLessonsAdapter = new MyLessonsAdapter(MyLessonsActivity.this);
         myLessonsList.setAdapter(myLessonsAdapter);
 
         myLessonsList.setOnItemClickListener((parent, view, position, id) -> {
@@ -40,7 +38,7 @@ public class MyLessonsActivity extends BaseActivity {
         });
 
         floatingActionButton.setOnClickListener(v ->
-                startActivity(new Intent(MyLessonsActivity.this,AddLessonNameActivity.class)));
+                startActivity(new Intent(MyLessonsActivity.this, AddLessonNameActivity.class)));
     }
 
 
@@ -55,13 +53,4 @@ public class MyLessonsActivity extends BaseActivity {
         myLessonsAdapter.notifyDataSetChanged();
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 }

@@ -3,7 +3,6 @@ package com.denzcoskun.schoolassistant.project.screens.weeklyschedule.activities
 import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,8 +16,6 @@ import com.denzcoskun.schoolassistant.project.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.project.helpers.DataHelper;
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.LessonConstants;
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models.LessonModel;
-
-import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -57,7 +54,7 @@ public class EditLessonActivity extends BaseActivity {
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        addBackButton();
         setTitle(R.string.edit_course);
 
         DataHelper dataHelper = new DataHelper(EditLessonActivity.this);
@@ -143,15 +140,5 @@ public class EditLessonActivity extends BaseActivity {
                 + lessonModel.getFinishTime().split(":")[1]));
         edittextClassroom.setText(lessonModel.getClassroom());
         spinnerLessons.setSelection(lessonModel.getPosition());
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 }

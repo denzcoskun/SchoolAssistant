@@ -1,0 +1,3 @@
+[submodule "libdenx"]
+	path = libdenx
+	url = https://github.com/denzcoskun/libdenx.git

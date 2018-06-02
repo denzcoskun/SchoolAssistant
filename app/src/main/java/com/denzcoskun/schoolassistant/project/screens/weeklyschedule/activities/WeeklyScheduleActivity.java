@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
-import android.view.MenuItem;
 
 import com.denzcoskun.libdenx.activities.BaseActivity;
 import com.denzcoskun.schoolassistant.R;
@@ -16,7 +15,6 @@ import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.constants.L
 import com.denzcoskun.schoolassistant.project.screens.weeklyschedule.models.DayModel;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -36,8 +34,7 @@ public class WeeklyScheduleActivity extends BaseActivity {
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
-        Objects.requireNonNull(getSupportActionBar()).setElevation(0);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        addBackButton();
         setTitle(R.string.weekly_schedule);
 
         if (HomeActivity.mainModel.dayModels == null) {
@@ -79,15 +76,5 @@ public class WeeklyScheduleActivity extends BaseActivity {
         HomeActivity.mainModel.lessonsNames.add(getString(R.string.science));
         HomeActivity.mainModel.lessonsNames.add(getString(R.string.mathematics));
         HomeActivity.mainModel.lessonsNames.add(getString(R.string.history));
-    }
-
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 }

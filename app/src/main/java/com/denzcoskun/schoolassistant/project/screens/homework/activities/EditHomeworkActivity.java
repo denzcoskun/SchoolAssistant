@@ -3,7 +3,6 @@ package com.denzcoskun.schoolassistant.project.screens.homework.activities;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -20,7 +19,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
-import java.util.Objects;
 
 import butterknife.BindView;
 
@@ -48,7 +46,7 @@ public class EditHomeworkActivity extends BaseActivity {
     @Override
     protected void onViewReady(Bundle savedInstanceState, Intent intent) {
         super.onViewReady(savedInstanceState, intent);
-        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        addBackButton();
         setTitle(R.string.edit_homework);
         DataHelper dataHelper = new DataHelper(EditHomeworkActivity.this);
 
@@ -86,17 +84,7 @@ public class EditHomeworkActivity extends BaseActivity {
         return R.layout.activity_edit_homework;
     }
 
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
-
-    public void init(int position){
+    public void init(int position) {
         textviewAddHomeworkName.setText(HomeActivity.mainModel.homeworkModels.get(position).getHomeworkName());
         textviewAddHomeworkSubject.setText(HomeActivity.mainModel.homeworkModels.get(position).getHomeworkSubject());
         textviewAddHomeworkDate.setText(HomeActivity.mainModel.homeworkModels.get(position).getHomeworkDate());
