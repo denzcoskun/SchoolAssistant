@@ -7,30 +7,30 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_new_logo"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/ic_new_logo_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".project.activities.HomeActivity">
+        <activity android:name=".activities.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".project.screens.homework.activities.HomeworkActivity"/>
-        <activity android:name=".project.screens.weeklyschedule.activities.WeeklyScheduleActivity" />
-        <activity android:name=".project.screens.weeklyschedule.activities.AddLessonActivity" />
-        <activity android:name=".project.screens.weeklyschedule.activities.EditLessonActivity" />
-        <activity android:name=".project.screens.weeklyschedule.activities.MyLessonsActivity" />
-        <activity android:name=".project.screens.weeklyschedule.activities.AddLessonNameActivity" />
-        <activity android:name=".project.screens.weeklyschedule.activities.EditLessonNameActivity" />
-        <activity android:name=".project.screens.homework.activities.AddHomeworkActivity" />
-        <activity android:name=".project.screens.homework.activities.EditHomeworkActivity"/>
-        <activity android:name=".project.screens.exams.activities.ExamsActivity"/>
-        <activity android:name=".project.screens.exams.activities.AddExamActivity" />
-        <activity android:name=".project.screens.exams.activities.EditExamActivity" />
+        <activity android:name=".screens.homework.activities.HomeworkActivity"/>
+        <activity android:name=".screens.weeklyschedule.activities.WeeklyScheduleActivity" />
+        <activity android:name=".screens.weeklyschedule.activities.AddLessonActivity" />
+        <activity android:name=".screens.weeklyschedule.activities.EditLessonActivity" />
+        <activity android:name=".screens.weeklyschedule.activities.MyLessonsActivity" />
+        <activity android:name=".screens.weeklyschedule.activities.AddLessonNameActivity" />
+        <activity android:name=".screens.weeklyschedule.activities.EditLessonNameActivity" />
+        <activity android:name=".screens.homework.activities.AddHomeworkActivity" />
+        <activity android:name=".screens.homework.activities.EditHomeworkActivity"/>
+        <activity android:name=".screens.exams.activities.ExamsActivity"/>
+        <activity android:name=".screens.exams.activities.AddExamActivity" />
+        <activity android:name=".screens.exams.activities.EditExamActivity" />
     </application>
 
 </manifest>
