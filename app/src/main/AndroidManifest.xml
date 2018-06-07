@@ -31,6 +31,7 @@
         <activity android:name=".screens.exams.activities.ExamsActivity"/>
         <activity android:name=".screens.exams.activities.AddExamActivity" />
         <activity android:name=".screens.exams.activities.EditExamActivity" />
+        <activity android:name=".screens.notes.activities.NotesActivity" />
     </application>
 
 </manifest>

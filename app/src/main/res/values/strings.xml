@@ -35,6 +35,12 @@
     <string name="exam_classroom">Exam Classroom</string>
     <string name="exam_date">Date:</string>
     <string name="exam_time">Time:</string>
+    <!--Notes-->
+    <string name="notes">Notes</string>
+    <string name="add_note">Add Note</string>
+    <string name="note_exam">Edit Note</string>
+    <string name="note_name">Note Name</string>
+    <string name="note_subject">Note Subject</string>
     <!--Error-->
     <string name="message_error">Message Error</string>
     <string name="volley_error">Volley Error</string>
