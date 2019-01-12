@@ -6,10 +6,20 @@ package com.denzcoskun.schoolassistant.models;
 public class ItemModel {
     private int itemName;
     private int itemImage;
+    private Class className;
 
-    public ItemModel(int itemName, int itemImage) {
+    public ItemModel(int itemName, int itemImage, Class className) {
         this.itemName = itemName;
         this.itemImage = itemImage;
+        this.className = className;
+    }
+
+    public Class getClassName() {
+        return className;
+    }
+
+    public void setClassName(Class className) {
+        this.className = className;
     }
 
     public int getItemName() {

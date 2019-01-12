@@ -3,6 +3,7 @@ package com.denzcoskun.schoolassistant.helpers;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.denzcoskun.schoolassistant.activities.HomeActivity;
 import com.denzcoskun.schoolassistant.models.MainModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -25,6 +26,14 @@ public class DataHelper {
         SharedPreferences.Editor editor = sharedPrefs.edit();
         Gson gson = new Gson();
         String json = gson.toJson(mainModel);
+        editor.putString("Student Data", json);
+        editor.commit();
+    }
+    public void setMainModel(){
+        SharedPreferences sharedPrefs = context.getSharedPreferences("Application Data", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPrefs.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(HomeActivity.mainModel);
         editor.putString("Student Data", json);
         editor.commit();
     }

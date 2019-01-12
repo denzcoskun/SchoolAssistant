@@ -1,7 +1,7 @@
 package com.denzcoskun.schoolassistant.adapters;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,10 +22,12 @@ import butterknife.ButterKnife;
  */
 public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapter.ViewHolder> {
 
+
     private List<ItemModel> list;
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
     Context context;
+
     // data is passed into the constructor
     public RecyclerviewAdapter(Context context, List<ItemModel> list) {
         this.mInflater = LayoutInflater.from(context);
@@ -70,7 +72,11 @@ public class RecyclerviewAdapter extends RecyclerView.Adapter<RecyclerviewAdapte
 
         @Override
         public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            if (mClickListener != null) {
+                mClickListener.onItemClick(view, getAdapterPosition());
+                Intent intent = new Intent(context, list.get(getAdapterPosition()).getClassName());
+                context.startActivity(intent);
+            }
         }
     }
 

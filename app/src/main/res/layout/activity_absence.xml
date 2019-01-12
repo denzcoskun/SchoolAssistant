@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.denzcoskun.schoolassistant.screens.exams.activities.ExamsActivity">
+    tools:context="com.denzcoskun.schoolassistant.screens.absence.activities.AbsencesActivity">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -12,7 +12,7 @@
         android:background="@drawable/education"/>
     <ListView
         android:paddingTop="8dp"
-        android:id="@+id/listview_exams"
+        android:id="@+id/listview_absences"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:divider="@android:color/transparent" />
@@ -25,7 +25,7 @@
         android:padding="20dp">
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/exam_add_button"
+            android:id="@+id/absence_add_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_add"

@@ -38,9 +38,19 @@
     <!--Notes-->
     <string name="notes">Notes</string>
     <string name="add_note">Add Note</string>
-    <string name="note_exam">Edit Note</string>
+    <string name="edit_note">Edit Note</string>
     <string name="note_name">Note Name</string>
     <string name="note_subject">Note Subject</string>
+    <!--Absenteeism-->
+    <string name="absences">Absences</string>
+    <string name="add_absence">Add Absence</string>
+    <string name="edit_absence">Edit Absence</string>
+    <string name="all_day">All Day</string>
+    <string name="half_day">Half Day</string>
+    <string name="excused">Excused</string>
+    <string name="unexcused">Unexcused</string>
+    <string name="status">Status: </string>
+    <string name="kind">Kind: </string>
     <!--Error-->
     <string name="message_error">Message Error</string>
     <string name="volley_error">Volley Error</string>

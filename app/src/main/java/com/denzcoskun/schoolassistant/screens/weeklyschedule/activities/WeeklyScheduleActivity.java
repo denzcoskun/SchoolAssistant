@@ -36,6 +36,7 @@ public class WeeklyScheduleActivity extends BaseActivity {
         super.onViewReady(savedInstanceState, intent);
         addBackButton();
         setTitle(R.string.weekly_schedule);
+        noActionBarShadow();
 
         if (HomeActivity.mainModel.dayModels == null) {
             initDays();

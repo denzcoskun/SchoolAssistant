@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.denzcoskun.schoolassistant.project.screens.homework.activities.HomeworkActivity">
+    tools:context="com.denzcoskun.schoolassistant.screens.homework.activities.HomeworkActivity">
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

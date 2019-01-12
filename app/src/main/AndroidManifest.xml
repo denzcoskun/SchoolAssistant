@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".screens.homework.activities.HomeworkActivity"/>
+        <activity android:name=".screens.homework.activities.HomeworkActivity" />
         <activity android:name=".screens.weeklyschedule.activities.WeeklyScheduleActivity" />
         <activity android:name=".screens.weeklyschedule.activities.AddLessonActivity" />
         <activity android:name=".screens.weeklyschedule.activities.EditLessonActivity" />
@@ -27,11 +27,16 @@
         <activity android:name=".screens.weeklyschedule.activities.AddLessonNameActivity" />
         <activity android:name=".screens.weeklyschedule.activities.EditLessonNameActivity" />
         <activity android:name=".screens.homework.activities.AddHomeworkActivity" />
-        <activity android:name=".screens.homework.activities.EditHomeworkActivity"/>
-        <activity android:name=".screens.exams.activities.ExamsActivity"/>
+        <activity android:name=".screens.homework.activities.EditHomeworkActivity" />
+        <activity android:name=".screens.exams.activities.ExamsActivity" />
         <activity android:name=".screens.exams.activities.AddExamActivity" />
         <activity android:name=".screens.exams.activities.EditExamActivity" />
         <activity android:name=".screens.notes.activities.NotesActivity" />
+        <activity android:name=".screens.notes.activities.AddNoteActivity" />
+        <activity android:name=".screens.notes.activities.EditNoteActivity" />
+        <activity android:name=".screens.absence.activities.AbsencesActivity" />
+        <activity android:name=".screens.absence.activities.AddAbsenceActivity" />
+        <activity android:name=".screens.absence.activities.EditAbsenceActivity"></activity>
     </application>
 
 </manifest>
